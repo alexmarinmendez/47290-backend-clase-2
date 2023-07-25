@@ -14,3 +14,15 @@ const objetos = [
 		panes: 4,
 	},
 ];
+
+// ya agregue aqui mi codigo
+const keys = objetos.reduce((acc, curr) => {
+	Object.keys(curr).forEach((key) => {
+		if (!acc.includes(key)) {
+			acc.push(key);
+		}
+	});
+	return acc;
+}, []);
+
+console.log(keys);
