@@ -15,6 +15,33 @@ const objetos = [
   },
 ];
 
+// Codigo Avila Ivan
+// keys del array de dos objetos
+const keyObjetos = objetos.reduce(
+  (res, item) => {
+    Object.keys(item).forEach(
+      key => {
+        if (res.includes(key) === false){
+          res.push(key);
+        }
+      }
+    );
+    return res;
+  },[]);
+
+const sumaObjetos = objetos.reduce(
+  (sum, item) => {
+    Object.values(item).forEach(
+      value => {
+        sum += value;
+      }
+    );
+    return sum;
+  },0);
+  console.log('Keys sin repetir: ' + keyObjetos);
+  console.log('Suma de los valores: ' + sumaObjetos);
+// fin codigo Avila Ivan
+
 // ya agregue aqui mi codigo
 const keys = objetos.reduce((acc, curr) => {
   Object.keys(curr).forEach((key) => {
